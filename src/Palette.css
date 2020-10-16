@@ -6,30 +6,4 @@
     height: 90%;
 }
 
-.Slider{
-    width: 340px;
-    margin: 0 10px;
-    display: inline-block;
-}
 
-.rc-slider-track{
-    background-color: transparent;
-}
-
-.rc-slider-rail{
-    height: 8px;
-}
-
-.rc-slider-handle,
-.rc-slider-handle:active,
-.rc-slider-handle:focus,
-.rc-slider-handle:hover{
-    background-color: rgb(73, 93, 90);
-    outline: none;
-    border: 2px solid rgb(73, 98, 95);
-    box-shadow: none;
-    width: 13px;
-    height: 13px;
-    margin-left: -7px;
-    margin-top: -3px;
-}
