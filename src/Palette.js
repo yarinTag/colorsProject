@@ -18,7 +18,7 @@ class Palette extends Component{
     }
 
     changeFormat(val){
-        alert(val);
+       // alert(val);
         this.setState({foramt: val});
     }
     
