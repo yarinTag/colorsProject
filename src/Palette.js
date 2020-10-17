@@ -24,10 +24,16 @@ class Palette extends Component{
     
     render(){
 
-        const {foramt}=this.state;
-        const {level}=this.state;
+        const {level,foramt}=this.state;
         const colorBoxes=this.props.palette.colors[this.state.level].map(color => (
-            <ColorBox background={color[foramt]} name={color.name} key={color.id} />
+            <ColorBox 
+            background={color[foramt]}
+            name={color.name}
+            key={color.id} 
+            id={color.id} 
+            paletteId={this.props.palette.id}
+            showLink={true}
+            />
         ));
 
         return(
