@@ -27,7 +27,7 @@ class Palette extends Component{
         const {foramt}=this.state;
         const {level}=this.state;
         const colorBoxes=this.props.palette.colors[this.state.level].map(color => (
-            <ColorBox background={color[foramt]} name={color.name} />
+            <ColorBox background={color[foramt]} name={color.name} key={color.id} />
         ));
 
         return(
@@ -39,6 +39,10 @@ class Palette extends Component{
                     {colorBoxes}
                 </div>
                 {/* Footer eventually */}
+                <footer className="Palette-footer">
+                    {this.props.palette.paletteName}
+                    <span className="emoji">{this.props.palette.emoji}</span>
+                </footer>
                 
             </div>
         );
