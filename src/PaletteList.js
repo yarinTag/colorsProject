@@ -5,8 +5,9 @@ import {withStyles} from "@material-ui/styles";
 
 const styles={
     root: {
-        backgroundColor: "blue",
-        height: "100%",
+        background: "rgb(142,84,122)",
+        background: "linear-gradient(63deg, rgba(142,84,122,0.9542191876750701) 7%, rgba(243,222,247,0) 99%, rgba(104,104,186,1) 100%, rgba(44,48,52,1) 100%)",
+        height: "100vh",
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "center"
@@ -29,7 +30,8 @@ const styles={
         width: "100%",
         display: "grid",
         gridTemplateColumns: "repeat(3,30%)",
-        gripGap: "5%"
+        gripGap: "2.5rem",
+        
     }
 };
 
@@ -45,7 +47,9 @@ class PaletteList extends Component{
                     </nav>
                     <div className={classes.palettes}>
                         {palettes.map(palette=>(
-                          <MiniPalette {...palette}/>
+                          <Link to={`/palette/${palette.id}`}>
+                              <MiniPalette {...palette}/>
+                          </Link>
                        ))}
                     </div>
                 </div>            

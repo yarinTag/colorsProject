@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {CopyToClipboard} from "react-copy-to-clipboard";
+import {Link} from 'react-router-dom';
 import "./ColorBox.css";
 
 
@@ -32,7 +33,9 @@ render(){
              <button className="copy-button">Copy</button>
              </CopyToClipboard>
          </div>
-         <span className="see-more">More</span>
+         <Link to='/'>
+            <span className="see-more">More</span>
+         </Link>
       </div>
     );
   }

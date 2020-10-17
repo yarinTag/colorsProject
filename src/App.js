@@ -22,6 +22,7 @@ render(){
         <Palette palette={generatePalette(this.findIdPalette(routeProps.match.params.id))}/>
     )}
     />
+    <Route exact path='/palette/:paletteId/:colorId' render={()=><h1>Single</h1>}/>
     </Switch>
 
 
