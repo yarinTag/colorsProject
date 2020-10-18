@@ -34,7 +34,7 @@ render(){
              </CopyToClipboard>
          </div>
          {this.props.showLink && (
-         <Link to={`/palette/${this.props.paletteId}/${this.props.paletteId}`} onClick={e=> e.stopPropagation()}>
+         <Link to={`/palette/${this.props.paletteId}/${this.props.id}`} onClick={e=> e.stopPropagation()}>
             <span className="see-more">More</span>
          </Link>
          )}

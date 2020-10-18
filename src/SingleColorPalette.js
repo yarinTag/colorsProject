@@ -20,12 +20,12 @@ class SingleColorPalette extends Component{
     }
     render(){
         const colorBoxes=this._shades.map(color => (
-            <ColorBox key={color.id} name={color.name} color={color.hex} showLink={false}/>
+            <ColorBox key={color.id} name={color.name} background={color.hex} showLink={false}/>
         ));
         return(
-            <div>
+            <div className="Palette">
                 <h1>Single Color Palette</h1>
-                <div>
+                <div className="Palette-colors">
                     {colorBoxes}
                 </div>
             </div>
