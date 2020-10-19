@@ -36,6 +36,7 @@ class Navbar extends Component{
                 <div className="logo">
                     <Link to="/">ReactColorPicker</Link>
                 </div>
+                {this.props.hideFromMoreColors && (
                 <div className="slider-container">
                     <span>Level: {this.props.level}</span>
                     <div className="slider">
@@ -48,6 +49,7 @@ class Navbar extends Component{
                         />
                     </div>
                 </div>
+                )}
                 <div className="select-container">
                     <Select value={this.state.foramt}  onChange={this.handleChange}>
                         <MenuItem value="hex">HEX - #ffffff</MenuItem>
