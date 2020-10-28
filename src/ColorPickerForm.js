@@ -1,18 +1,8 @@
 import React, { Component } from 'react'
-import classNames from "classnames";
-import {withStyles} from "@material-ui/core/styles";
-import Drawer from '@material-ui/core/Drawer';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import {ChromePicker} from "react-color";
 import { Button, colors } from "@material-ui/core";
 import {ValidatorForm, TextValidator} from "react-material-ui-form-validator";
-import DraggableColorList from "./DraggableColorList";
-import { arrayMove } from "react-sortable-hoc";
-import PaletteFormNav from "./PaletteFormNav";
+
 
 class ColorPickerForm extends Component{
     constructor(props){
