@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Button, colors } from "@material-ui/core";
 import {ValidatorForm, TextValidator} from "react-material-ui-form-validator";
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Link } from "react-router-dom";
 import {withStyles} from "@material-ui/core/styles";
 import PaletteMetaForm from "./PaletteMetaForm";
@@ -20,7 +21,9 @@ const styles = theme => ({
     root:{
         display: "flex"
     },
-
+    hide: {
+        display: 'none',
+    },
     appBar: {
         transition: theme.transitions.create(['margin', 'width'], {
         easing: theme.transitions.easing.sharp,
@@ -102,7 +105,7 @@ class PaletteFormNav extends Component{
                         edge="start"
                         className={classNames(classes.menuButton, open && classes.hide)}
                     >
-                        <MenuIcon />
+                        <ChevronRightIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap>
                         Create A Palette

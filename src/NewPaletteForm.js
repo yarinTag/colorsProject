@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Button, colors } from "@material-ui/core";
 import DraggableColorList from "./DraggableColorList";
 import { arrayMove } from "react-sortable-hoc";
@@ -36,6 +35,7 @@ const styles = theme => ({
   drawerHeader: {
     display: 'flex',
     alignItems: 'center',
+    width: "100%",
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
@@ -44,7 +44,7 @@ const styles = theme => ({
   content: {
     flexGrow: 1,
     height: "calc(100vh - 64px)",
-    padding: theme.spacing(3),
+    padding: 0,
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -68,7 +68,7 @@ const styles = theme => ({
   },
 
   buttons:{
-
+    
   }
 
 });
@@ -169,7 +169,7 @@ class NewPaletteForm extends Component {
                 >
                     <div className={classes.drawerHeader}>
                         <IconButton onClick={this.handleDrawerClose}>
-                            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                            <ChevronLeftIcon />
                         </IconButton>
                     </div>
                     <Divider />
