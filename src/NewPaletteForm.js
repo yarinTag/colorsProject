@@ -30,6 +30,8 @@ const styles = theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    display: "flex",
+    alignItems: "center"
   },
   drawerHeader: {
     display: 'flex',
@@ -56,7 +58,20 @@ const styles = theme => ({
     }),
     marginLeft: 0,
   },
-})
+  container:{
+    width: "100%",
+    height: "90vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
+  buttons:{
+
+  }
+
+});
 
 
 class NewPaletteForm extends Component {
@@ -161,8 +176,9 @@ class NewPaletteForm extends Component {
                         </IconButton>
                     </div>
                     <Divider />
+                    <div className={classes.container}>
                     <Typography variant="h4"> Design Your Palette </Typography>
-                    <div>
+                    <div className={classes.buttons}>
                         <Button
                             variant="contained" 
                             color="secondary" 
@@ -180,6 +196,7 @@ class NewPaletteForm extends Component {
                         addNewColor={this.addNewColor}
                         colors={colors}
                     />
+                  </div>
                 </Drawer>
                 <main
                     className={classNames(classes.content, {
