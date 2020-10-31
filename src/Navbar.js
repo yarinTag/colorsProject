@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import Select from '@material-ui/core/Select';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import './Navbar.css';
 import {Link} from "react-router-dom";
 import { MenuItem } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import styles from "./styles/NavBarStyles";
+import { withStyles } from "@material-ui/styles";
 
 
 class Navbar extends Component{
@@ -30,27 +31,27 @@ class Navbar extends Component{
     }
 
     render(){
-        
+        const {classes}=this.props;
         return(
-            <header className="Navbar">
-                <div className="logo">
+            <header className={classes.Navbar}>
+                <div className={classes.logo}>
                     <Link to="/">ReactColorPicker</Link>
                 </div>
                 {this.props.hideFromMoreColors && (
-                <div className="slider-container">
-                    <span>Level: {this.props.level}</span>
-                    <div className="slider">
-                        <Slider 
-                            defaultValue={this.props.level}
-                            min={100}
-                            step={100}
-                            max={900}
-                            onAfterChange={this.props.changeLevel}
-                        />
+                    <div>
+                        <span>Level: {this.props.level}</span>
+                        <div className={classes.slider}>
+                            <Slider 
+                                defaultValue={this.props.level}
+                                min={100}
+                                step={100}
+                                max={900}
+                                onAfterChange={this.props.changeLevel}
+                            />
                     </div>
                 </div>
                 )}
-                <div className="select-container">
+                <div className={classes.selectContainer}>
                     <Select value={this.state.foramt}  onChange={this.handleChange}>
                         <MenuItem value="hex">HEX - #ffffff</MenuItem>
                         <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
@@ -61,9 +62,15 @@ class Navbar extends Component{
                     open={this.state.open}
                     anchorOrigin={{vertical: "bottom",horizontal: "left"}}
                     message={<span id="Format Change">Format Change To {this.state.foramt.toUpperCase()} </span>}
+                    ContentProps={{"aria-describedby": "message-id"}}
                     autoHideDuration={2000}
                     action={[
-                        <IconButton onClick={this.handleClose} color="inherit">
+                        <IconButton 
+                            onClick={this.handleClose}
+                            color="inherit" 
+                            key='close' 
+                            aria-label='close'
+                        >
                             <CloseIcon/>
                         </IconButton>
                     ]}
@@ -74,4 +81,4 @@ class Navbar extends Component{
     }
 }
 
-export default Navbar;
+export default withStyles(styles)(Navbar);

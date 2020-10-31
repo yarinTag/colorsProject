@@ -5,15 +5,14 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import { Button, colors } from "@material-ui/core";
-import {ValidatorForm, TextValidator} from "react-material-ui-form-validator";
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Link } from "react-router-dom";
 import {withStyles} from "@material-ui/core/styles";
 import PaletteMetaForm from "./PaletteMetaForm";
+import styles from "./styles/PaletteFormNavStyles";
 
-const drawerWidth = 400;
+/*const drawerWidth = DRAWER_WIDTH;
 
 
 const styles = theme => ({
@@ -59,7 +58,7 @@ const styles = theme => ({
   }
 
 });
-
+*/
 
 class PaletteFormNav extends Component{
     constructor(props){
@@ -97,7 +96,7 @@ class PaletteFormNav extends Component{
                     [classes.appBarShift]: open,
                     })}
                 >
-                    <Toolbar>
+                    <Toolbar disableGutters={!open}>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -119,15 +118,14 @@ class PaletteFormNav extends Component{
                              <Button variant="contained" color="primary" onClick={this.showForm} className={classes.button}>
                                 Save
                              </Button>
-                    </div>
-                </AppBar>
-                {this.state.formShowing && (<PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} hideForm={this.hideForm}/>
-                )}
-
-            </div>
-        )
+                     </div>
+                    </AppBar>
+                    {this.state.formShowing && (<PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} hideForm={this.hideForm}/>
+                
+            )}
+        </div>
+        );
     }
-
 }
 
 export default withStyles(styles, { withTheme: true })(PaletteFormNav);

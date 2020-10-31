@@ -53,7 +53,7 @@ render(){
       <Route exact path ='/' render={routeProps => (
         <PaletteList 
           palettes={this.state.palettes}
-          deletePalette={this.deletePalette}
+          deletePalette={this.deletePalette} 
           {...routeProps}/>)}/>
       <Route exact path='/palette/:id' render={routeProps => (
           <Palette palette={generatePalette(this.findIdPalette(routeProps.match.params.id))}/>

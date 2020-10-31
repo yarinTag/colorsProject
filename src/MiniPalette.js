@@ -1,77 +1,23 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import {withStyles} from "@material-ui/styles";
 import DeleteIcon from "@material-ui/icons/Delete";
+import styles from "./styles/MiniPaletteStyles";
 
-const styles={
-    root: {
-        backgroundColor: "white",
-        border: "1px solid black",
-        borderRadius: "5px",
-        marginBottom: "30px",
-        marginLeft: "15px",
-        padding: "0.5rem",
-        position: "relative",
-        overflow: "hidden",
-        cursor: "pointer",
-        "&:hover svg": {
-            opacity: 1
-        }
-    },
-    colors: {
-        backgroundColor: "gray",
-        height: "150px",
-        width: "100%",
-        borderRadius: "5px",
-        overflow: "hidden"
-    },
-    title: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        margin: "0",
-        color: "black",
-        paddingTop: "0.5rem",
-        fontSize: "1rem",
-        position: "relative"
-    },
-    emoji: {    
-        marginLeft: "0.5rem",
-        fontSize: "1.5rem"
-    },
-    miniColor: {
-        height: "25%",
-        width: "20%",
-        display: "inline-block",
-        margin: "0 auto",
-        position: "relative",
-        marginBottom: "-3.5px"
-    },
-    deleteIcon: {
-        color: "white",
-        backgroundColor: "#eb3d30",
-        width: "20px",
-        height: "20px",
-        position: "absolute",
-        right: "0px",
-        top: "0px",
-        padding: "10px",
-        zIndex: 10,
-        opacity: 0,
-        transition: "all 1.5s ease-in-out"
-    }
-}
-
-class MiniPalette extends Component{
+class MiniPalette extends PureComponent{
     constructor(props){
         super(props);
         this.deletePalette=this.deletePalette.bind(this);
-        //this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
 
     }
     deletePalette(e){
         e.stopPropagation();
-        this.props.handleDelete(this.props.id);
+        this.props.openDialog(this.props.id);
         //alert("Demo!!!");
+    }
+
+    handleClick() {
+        this.props.goToPalette(this.props.id);
     }
 
     render(){
@@ -95,7 +41,8 @@ class MiniPalette extends Component{
                 </div>
                 <h5 className={classes.title}>
                     {paletteName}
-                    <span className={classes.emoji}>{emoji}</span></h5>
+                    <span className={classes.emoji}>{emoji}</span>
+                </h5>
             </div>
         );
     }

@@ -11,9 +11,9 @@ import DraggableColorList from "./DraggableColorList";
 import { arrayMove } from "react-sortable-hoc";
 import PaletteFormNav from "./PaletteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
+import styles from "./styles/NewPaletteFormStyles";
 
-
-const drawerWidth = 400;
+/*const drawerWidth = 400;
 
 const styles = theme => ({
   root: {
@@ -72,7 +72,7 @@ const styles = theme => ({
   }
 
 });
-
+*/
 
 class NewPaletteForm extends Component {
     static defaultProps = {
@@ -175,13 +175,13 @@ class NewPaletteForm extends Component {
                     <Divider />
                     <div className={classes.container}>
                     <Typography variant="h4"> Design Your Palette </Typography>
-                    <div className={classes.buttons}>
-                        <Button
+                    <div >
+                        <Button className={classes.clearButton}
                             variant="contained" 
                             color="secondary" 
                             onClick={this.clearPalette}
-                            > Clear Button </Button>
-                        <Button 
+                            > Clear Palette </Button>
+                        <Button className={classes.button}
                             variant="contained" 
                             color="primary" 
                             onClick={this.addRandomColor}
@@ -206,6 +206,7 @@ class NewPaletteForm extends Component {
                         deleteColor={this.deleteColor}
                         axis="xy"
                         onSortEnd={this.onSortEnd}
+                        distance={20}
                     />
                 </main>
             </div>
