@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import MiniPalette from './MiniPalette.js';
 import {withStyles} from "@material-ui/styles";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const styles={
     root: {
@@ -41,6 +47,9 @@ const styles={
 };
 
 class PaletteList extends Component{
+    goToPalette(id){
+        this.props.history.push(`/palette/${id}`);
+    }
 
     render(){
         const {palettes,classes}=this.props;
@@ -48,16 +57,21 @@ class PaletteList extends Component{
             <div className={classes.root}>
                 <div className={classes.container}>
                     <nav className={classes.nav}>
-                        <h1>React Colors</h1>
+                        <h1 className={classes.heading}>React Colors</h1>
                         <Link to="/palette/new">Create Palette</Link>
                     </nav>
-                    <div className={classes.palettes}>
+                    <TransitionGroup className={classes.palettes}>
                         {palettes.map(palette=>(
-                          <Link to={`/palette/${palette.id}`}>
-                              <MiniPalette {...palette}/>
-                          </Link>
+                          <CSSTransition key={palette.id} classNames="fade" timeout={500}>
+                              <MiniPalette {...palette}
+                                handleClick={()=>this.goToPalette(palette.id)}
+                                handleDelete={this.props.deletePalette}
+                                key={palette.id}
+                                id={palette.id}
+                              />
+                          </CSSTransition>
                        ))}
-                    </div>
+                    </TransitionGroup>
                 </div>            
             </div>
         );
