@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import { Button, colors } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Link } from "react-router-dom";
 import {withStyles} from "@material-ui/core/styles";
@@ -85,7 +85,7 @@ class PaletteFormNav extends Component{
 
     render(){
         const {classes , open, palettes, handleSubmit }=this.props;
-        const {newPaletteName}=this.state;
+        
         return(
             <div className={classes.root}>
                 <CssBaseline />

@@ -1,7 +1,7 @@
 
 const styles = {
   picker: {
-    width: "35vh !important",
+    width: "44vh !important",
     marginTop: "2rem"
   },
   addColor: {

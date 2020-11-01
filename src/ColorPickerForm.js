@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {ChromePicker} from "react-color";
-import { Button, colors } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import {ValidatorForm, TextValidator} from "react-material-ui-form-validator";
 import {withStyles} from "@material-ui/core/styles";
 import styles from "./styles/ColorPickerFormStyles";

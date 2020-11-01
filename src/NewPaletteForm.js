@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import { Button, colors } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import DraggableColorList from "./DraggableColorList";
 import { arrayMove } from "react-sortable-hoc";
 import PaletteFormNav from "./PaletteFormNav";
@@ -147,7 +147,7 @@ class NewPaletteForm extends Component {
     }
    
      render(){
-         const {classes, theme, maxColors,palettes}=this.props;
+         const {classes, maxColors,palettes}=this.props;
          const {open, colors}=this.state;
          const paletteIsFull = colors.length>=maxColors;
          return(

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ColorBox from "./ColorBox";
 import Navbar from './Navbar';
@@ -18,7 +18,7 @@ class SingleColorPalette extends Component{
         let allColors=palette.colors;
 
         for(let key in allColors){
-        {/* Return all shades of given color */}
+        /* Return all shades of given color */
             shades=shades.concat(
                 allColors[key].filter(color=>color.id===colorToFilterBy)
             );
